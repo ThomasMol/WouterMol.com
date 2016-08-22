@@ -7,3 +7,20 @@ body {
 * {
     text-decoration: none;
 }
+
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
+/* Main CSS */
+body{
+    font-family: basic, arial, verdana;
+    padding-top: 60px;
+}
+
+
+nav li a{
+    font-size: 16px !important;
+}
