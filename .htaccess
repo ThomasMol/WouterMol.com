@@ -4,6 +4,7 @@ RewriteCond %{REQUEST_FILENAME} !-f
 RewriteCond %{REQUEST_FILENAME} !-l
 
 RewriteRule ^([^\.]+)$ $1.php [NC,L]
+RewriteRule ^gallery/([A-z]+) gallery.php?category=$1 [NC,L]
 
 
 RewriteCond %{HTTP_HOST} ^www\.woutermol\.com$

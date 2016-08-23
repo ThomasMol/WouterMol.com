@@ -1,0 +1,65 @@
+/*html reset*/
+html,
+body {
+    margin: 0;
+    padding: 0;
+}
+* {
+    text-decoration: none;
+}
+
+* {
+  -webkit-border-radius: 0 !important;
+     -moz-border-radius: 0 !important;
+          border-radius: 0 !important;
+}
+
+/* Main CSS */
+body{
+    font-family: basic, arial, verdana;
+}
+
+nav{
+    background-color: rgba(0, 0, 0, 0.75) !important;
+}
+.active a{
+    background-color: rgba(0, 0, 0, 0.80) !important;
+}
+
+nav li a{
+    font-size: 16px !important;
+}
+
+.jumbotron{
+    background: url(../images/Ocean/DSC_2001.jpg);
+    background-size: cover;
+    margin-bottom: 0px;
+}
+
+#hello-message{
+    text-align: center;
+    padding-top: 64px;
+    color: white;
+}
+#sub-message{
+    color: white;
+    text-align: center;
+    padding-bottom: 64px;
+}
+.categories ul{
+    
+}
+
+.categories {
+    background-color: rgba(0, 31, 88, 0.21);
+    margin-bottom: 24px;
+}
+
+.images img{
+    width: 95%;
+    height: 95%;
+}
+
+.col-md-4{
+    margin-bottom: 24px;
+}
