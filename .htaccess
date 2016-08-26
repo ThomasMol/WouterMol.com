@@ -1,10 +1,17 @@
 RewriteEngine On
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
-RewriteCond %{REQUEST_FILENAME} !-l
+RewriteRule ^([^\.]+)$ $1.php [L]
 
-RewriteRule ^([^\.]+)$ $1.php [NC,L]
-RewriteRule ^gallery/([A-z]+) gallery.php?category=$1 [NC,L]
+
+RewriteRule ^gallery/([^\.]+) gallery.php?category=$1 [QSA]
+
+RewriteRule ^gallery/([^\.]+)/([^\.]+) gallery.php?category=$1&location=$2 [QSA]
+
+
+RewriteRule ^gallery/([^\.]+)/([^\.]+)/([^\.]+) gallery.php?category=$1&location=$2&sort=$3 [L]
+
 
 
 RewriteCond %{HTTP_HOST} ^www\.woutermol\.com$
@@ -25,3 +32,4 @@ RewriteRule (.*) http://woutermol.com/$1 [R=301,L]
     ExpiresByType image/png "access plus 1 month"
     ExpiresByType image/svg "access plus 1 month"
 </IfModule>
+

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <base href="//192.168.2.86/projects/WouterMol/"/>
-    <script src="https://code.jquery.com/jquery-1.11.3.min.js"></script>
+    <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="http://use.edgefonts.net/basic:n4:all.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">

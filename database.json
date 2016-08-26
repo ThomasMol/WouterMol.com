@@ -1,0 +1,42 @@
+[
+ {
+   "filename": "DSC_1156.jpg",
+   "name": "Sunset water",
+   "description": "Pier bij het water",
+   "category": "sea,sky,landscape",
+   "location":"Denmark",
+   "date": "30/06/2016",
+   "time": "21:49",
+   "thumbnail": "DSC_1156_thumb.jpg"
+ },
+ {
+   "filename": "DSC_2001.jpg",
+   "name": "Sweden water",
+   "description": "Lange exposure bij rivier.",
+   "category": "sea,exposure",
+   "location":"Sweden",
+   "date": "09/07/2016",
+   "time": "0:07",
+   "thumbnail": "DSC_2001_thumb.jpg"
+ },
+ {
+   "filename": "DSC_2001.jpg",
+   "name": "Sweden water",
+   "description": "Lange exposure bij rivier.",
+   "category": "sea,exposure",
+   "location":"Sweden",
+   "date": "09/07/2016",
+   "time": "0:07",
+   "thumbnail": "DSC_2001_thumb.jpg"
+ },
+ {
+   "filename": "DSC_2001.jpg",
+   "name": "Sweden water",
+   "description": "Lange exposure bij rivier.",
+   "category": "sea,exposure",
+   "location":"Sweden",
+   "date": "09/07/2016",
+   "time": "0:07",
+   "thumbnail": "DSC_2001_thumb.jpg"
+ }
+]
