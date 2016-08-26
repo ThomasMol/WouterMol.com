@@ -6,25 +6,33 @@
 import json, os, exifread
 from glob import glob
 from datetime import datetime
+from time import mktime
 
 force = True #force rewrite database json
 
 def reformatDtime(dtime):
 	dt = datetime.strptime(str(dtime), '%Y:%m:%d %H:%M:%S')
-	return dt.strftime('%Y/%m/%d %H:%M')
+	unix = str(int(mktime(dt.timetuple())*1000))
+	return dt.strftime('%Y/%m/%d'), dt.strftime('%H:%M'), unix
 
 def extractExif(fpath):
 	""" extract some exif data of the image located at filepath """
 		
-	with open(image, 'r') as f:
+	with open(fpath, 'r') as f:
 		exif = exifread.process_file(f)
 		
-	dtime = reformatDtime(exif['EXIF DateTimeOriginal'])
-	return {'dt':dtime,
-			'category':'',
+	date, time, timestamp = reformatDtime(exif['EXIF DateTimeOriginal'])
+	baseName, extension = fpath.split('/')[-1][:-4], fpath.split('.')[-1]
+	return {'date':date,
+			'time':time,
+			'timestamp':timestamp,
+			'categories':[],
 			'name':'',
-			'description':''}
-	
+			'description':'',
+			'filename': baseName+'.'+extension,
+			'albums':[],
+			'thumbnail':baseName+'_thumb.'+extension}
+
 if __name__ == '__main__':
 	images = sorted(glob('./*/*.jpg'))
 	
@@ -36,16 +44,16 @@ if __name__ == '__main__':
 			print 'ERROR loading database json'
 			print str(e)
 			if raw_input('continue to overwrite database json? type "yes": ').lower() == 'yes':
-				database = {}
+				database = []
 			
 	else:
-		database = {}
+		database = []
 
 	for image in images:
 		img_name = image.split('/')[-1][:-4]
 		if not img_name in database or force:
 			exif = extractExif(image)
-			database[img_name] = exif
+			database.append(exif)
 			print 'added',img_name,'record'
 		else:
 			print img_name,'already exists in database, skipping..'
