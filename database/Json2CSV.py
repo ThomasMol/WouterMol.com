@@ -34,7 +34,7 @@ def convert(fname):
 	csv.close()
 	
 if __name__ == '__main__':
-	convert('database/init.json')
+	convert('database/database.json')
 	
 		
 
