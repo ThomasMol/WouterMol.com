@@ -34,7 +34,7 @@ def extractExif(fpath):
 			'thumbnail':baseName+'_thumb.'+extension}
 
 if __name__ == '__main__':
-	images = sorted(glob('./*.jpg'))
+	images = sorted(glob('../images/*.jpg'))
 	
 	if os.path.exists('database.json'):
 		try:
