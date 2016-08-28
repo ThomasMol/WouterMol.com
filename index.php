@@ -2,9 +2,9 @@
 <html>
 <head>
     <meta charset="utf-8">
-    <base href="//192.168.2.86/projects/WouterMol/"/>
+<!--    <base href="//localhost/projects/WouterMol/"/>-->
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="http://use.edgefonts.net/basic:n4:all.js"></script>
+    <script src="http://use.edgefonts.net/source-sans-pro:n4,n9,n7,i7,i4,n3,i3,n6,i6,i9,n2,i2:all.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>  
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="mobile-web-app-capable" content="yes" />
@@ -30,8 +30,9 @@
             </div>            
             <div class="collapse navbar-collapse navbar-right" id="id-collapse-top-nav">      
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="home">home</a></li>
+                    <li class="active"><a href="home"><span class="glyphicon glyphicon-home"></span></a></li>
                     <li><a href="gallery/All">gallery</a></li>
+                    <li><a href="gallery/All">albums</a></li>
                 </ul>
             </div>
         </div>        
@@ -41,7 +42,7 @@
     <div class="jumbotron index">
         <div class="container">
             <h1 id="hello-message">Wouter Mol</h1>
-            <h3 id="sub-message">photography</h3>
+            <h2 id="sub-message">Photography</h2>
         </div>
     </div>
         
@@ -50,6 +51,8 @@
 
     <footer>
     </footer>
-    
+    <script>
+    $(".jumbotron").css("height", $(window).height() * 0.6);
+    </script>
 </body>
 </html>

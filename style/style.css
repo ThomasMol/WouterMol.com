@@ -20,7 +20,7 @@ body {
 /* Main CSS */
 
 body {
-    font-family: basic, arial, verdana;
+   font-family: source-sans-pro, verdana;
 }
 
 nav {
@@ -36,86 +36,40 @@ nav li a {
 }
 
 .jumbotron {
-    background: url(../images/DSC_2001.jpg);
+    background: url(../images/DSC_3173.jpg) #d6d6d6;
     background-size: cover;
     margin-bottom: 0px;
+    background-position: top center;
+    background-blend-mode:multiply;
+}
+.jumbotron .index{
+   height: 100%;
 }
 
 #hello-message {
     text-align: center;
-    padding-top: 64px;
-    color: white;
+    padding-top: 150px;
+    color: #ebebeb;
+    text-shadow: 1px 1px 5px #555555;
+    animation: fadeIn 1s;
 }
 
 #sub-message {
-    color: white;
+    color: #d8d8d8;
+    text-shadow: 1px 1px 3px #555555;
     text-align: center;
     padding-bottom: 64px;
+    font-style: italic;
+    animation-delay: 1s;
+    animation: fadeIn 1s;
 }
 
-.categories ul {
-    text-align: center;
-    text-transform: capitalize;
+@-webkit-keyframes fadeIn{
+    from{opacity: 0; margin-top: -20px;}
+    to{opacity: 1; margin-top: 20px;}
+}
+@-moz-keyframes fadeIn{
+    from{opacity: 0; margin-top: -20px;}
+    to{opacity: 1; margin-top: 20px;}
 }
 
-.categories {
-    background-color: rgba(129, 129, 129, 0.21);
-    margin-bottom: 24px;
-    border-bottom: solid 1px #d6d6d6;
-    text-align: center;
-    width: 100%;
-    height: 50px;
-    overflow: hidden;
-}
-
-.images img {
-    width: 100%;
-    height: 100%;
-    transition-duration: 0.2s;
-}
-
-.images img:hover {
-    cursor: pointer;
-    transition: 0.2s ease-in-out;
-    opacity: 0.8;
-}
-
-.col-md-4 {
-    margin-bottom: 24px;
-}
-
-/* Image-Viewer modal */
-.image-viewer{    
-    position: fixed;
-    z-index: 10;
-    text-align: center;
-    width: 100%;
-    height: 100%;
-    padding-top: 74px;
-    top: 0;
-    visibility: hidden;
-    background: rgba(0, 0, 0, 0.7);
-}
-.image-viewer img{
-    width: auto;
-    height: auto;
-    max-height: 720px;
-}
-
-.carousel{
-    background-color: rgba(28, 28, 28, 0.95);
-    bottom: 0;
-}
-.carousel img{
-    width: 8%;
-    margin: 10px;
-}
-
-.carousel img:hover{
-    cursor: pointer;
-}
-
-.carousel li, .carousel ul{
-    display: inline;
-    list-style: none;
-}
