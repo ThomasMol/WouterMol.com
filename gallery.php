@@ -1,14 +1,12 @@
 <?php 
-/*    if(!isset($_GET['category']) | !isset($_GET['location']) | !isset($_GET['sort'])){
-        header('location: /gallery/all/all/new');
-    }*/
+
 ?>
 <!DOCTYPE html>
 <html>
 
 <head>
     <meta charset="utf-8">
-    <base href="//192.168.2.68/projects/WouterMol/" />
+    <base href="//localhost/projects/WouterMol/" />
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
     <script src="http://use.edgefonts.net/basic:n4:all.js"></script>
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>

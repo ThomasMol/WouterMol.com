@@ -29,24 +29,44 @@
             </div>            
             <div class="collapse navbar-collapse navbar-right" id="id-collapse-top-nav">      
                 <ul class="nav navbar-nav">
-                    <li class="active"><a href="home"><span class="glyphicon glyphicon-home"></span></a></li>
-                    <li><a href="gallery">gallery</a></li>
-                    <li><a href="albums">albums</a></li>
+                    <li ><a href="index"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li><a href="gallery/All">gallery</a></li>
+                    <li class="active"><a href="albums">albums</a></li>
                 </ul>
             </div>
         </div>        
     </nav>
 
     <section id="main">
-    <div class="jumbotron index">
+    <div class="jumbotron albums">
         <div class="container">
-            <h1 id="hello-message">Wouter Mol</h1>
-            <h2 id="sub-message">Photography</h2>
+            <h1 id="hello-message">Albums</h1>
+            <h2 id="sub-message">Gallery of albums</h2>
         </div>
     </div>
         
-    <div class="container about-me">
-        <h1>About me?</h1>    
+    <div id="albums" class="container">
+        <?php 
+        $albums = array_filter(glob('database/albums/*'), 'is_file');
+        $album = array();
+        foreach($albums as $file) {
+            $file = pathinfo($file);
+            array_push($album,$file['filename']);
+        }
+        
+        foreach($album as $albumname){
+            echo 
+            "<h1 >". $albumname ."</h1><a href='#'>view more</a>
+            <div class='row' data-albumname='". $albumname ."'>".
+            
+            
+            
+            "</div>";
+        }
+        
+        
+        
+        ?>
     </div>
         
     
@@ -55,8 +75,26 @@
     <footer>
     </footer>
     <script>
-    $(".jumbotron").css("height", $(window).height() * 0.6);
-    $("#hello-message").css("padding-top", 156);
+    $(".jumbotron").css("height", $(window).height() * 0.4);
+        
+    $(document).ready(function(){
+        var albumnames = [];
+        
+        $("#albums div").each(function(){
+            albumnames.push($(this).attr("data-albumname"));
+        });
+        
+        $.each(albumnames, function(index, value){            
+            $.getJSON("database/albums/" + value +".json", function(data){
+                
+                $.each(data.slice(0,3), function(index, value2){
+                $("div[data-albumname='"+ value +"']").append("<div class='col-sm-4'><img src='images/"+ data[index]['filename'] +"' height='200'></div>");
+                   console.log(data[index]['filename']); 
+                });
+                
+            });
+        });
+    });
     </script>
 </body>
 </html>

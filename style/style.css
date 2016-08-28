@@ -35,23 +35,31 @@ nav li a {
     font-size: 16px !important;
 }
 
-.jumbotron {
+
+.index{
     background: url(../images/DSC_3173.jpg) #d6d6d6;
+    height: 100%;
     background-size: cover;
     margin-bottom: 0px;
     background-position: top center;
     background-blend-mode:multiply;
 }
-.jumbotron .index{
-   height: 100%;
+
+.albums{
+     background: url(../images/DSC_1156.jpg) #d6d6d6;
+    height: 100%;
+    background-size: cover;
+    margin-bottom: 0px;
+    background-position: top center;
+    background-blend-mode:multiply;
 }
 
 #hello-message {
     text-align: center;
-    padding-top: 150px;
+    padding-top: 5%;
     color: #ebebeb;
     text-shadow: 1px 1px 5px #555555;
-    animation: fadeIn 1s;
+    animation: fadeIn 0.5s;
 }
 
 #sub-message {
@@ -60,16 +68,20 @@ nav li a {
     text-align: center;
     padding-bottom: 64px;
     font-style: italic;
-    animation-delay: 1s;
-    animation: fadeIn 1s;
+    animation-delay: 0.25s;
+    animation: fadeIn 0.5s;
 }
 
 @-webkit-keyframes fadeIn{
-    from{opacity: 0; margin-top: -20px;}
+    from{opacity: 0; margin-top: -10px;}
     to{opacity: 1; margin-top: 20px;}
 }
 @-moz-keyframes fadeIn{
-    from{opacity: 0; margin-top: -20px;}
+    from{opacity: 0; margin-top: -10px;}
     to{opacity: 1; margin-top: 20px;}
 }
 
+
+#albums .row{
+    margin-bottom: 48px;
+}

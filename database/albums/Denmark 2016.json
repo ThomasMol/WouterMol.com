@@ -1,1 +1,34 @@
-[{"description": "Stevn's Klint in Denmark", "timestamp": "1468322791000", "filename": "DSC_2244.jpg", "location": "Denmark", "time": "13:26", "date": "2016/07/12", "albums": ["Denmark 2016"], "thumbnail": "DSC_2244_thumb.jpg", "categories": ["landscape", "geography"], "name": "clif"}, {"description": "Sunset from a recreational dock near Copenhagen Airport", "timestamp": "1467316182000", "filename": "DSC_1156.jpg", "location": "Copenhagen, Denmark", "time": "21:49", "date": "2016/06/30", "albums": ["Denmark 2016"], "thumbnail": "DSC_1156_thumb.jpg", "categories": ["nature", "landscape", "water", "sunset"], "name": "sunset"}, {"description": "", "timestamp": "1468258441000", "filename": "DSC_2171.jpg", "location": "Denmark", "time": "19:34", "date": "2016/07/11", "albums": ["Denmark 2016"], "thumbnail": "DSC_2171_thumb.jpg", "categories": ["nature", "water"], "name": "swans"}]
+[{
+    "description": "Stevn's Klint in Denmark"
+    , "timestamp": "1468322791000"
+    , "filename": "DSC_2244.jpg"
+    , "location": "Denmark"
+    , "time": "13:26"
+    , "date": "2016/07/12"
+    , "albums": ["Denmark 2016"]
+    , "thumbnail": "DSC_2244_thumb.jpg"
+    , "categories": ["landscape", "geography"]
+    , "name": "clif"
+}, {
+    "description": "Sunset from a recreational dock near Copenhagen Airport"
+    , "timestamp": "1467316182000"
+    , "filename": "DSC_1156.jpg"
+    , "location": "Copenhagen, Denmark"
+    , "time": "21:49"
+    , "date": "2016/06/30"
+    , "albums": ["Denmark 2016"]
+    , "thumbnail": "DSC_1156_thumb.jpg"
+    , "categories": ["nature", "landscape", "water", "sunset"]
+    , "name": "sunset"
+}, {
+    "description": ""
+    , "timestamp": "1468258441000"
+    , "filename": "DSC_2171.jpg"
+    , "location": "Denmark"
+    , "time": "19:34"
+    , "date": "2016/07/11"
+    , "albums": ["Denmark 2016"]
+    , "thumbnail": "DSC_2171_thumb.jpg"
+    , "categories": ["nature", "water"]
+    , "name": "swans"
+}]
