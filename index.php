@@ -52,8 +52,9 @@
     
     </section>
 
-    <footer>
-    </footer>
+    <?php 
+        include("footer.php");
+    ?>
     <script>
     $(".jumbotron").css("height", $(window).height() * 0.6);
     $("#hello-message").css("padding-top", 156);

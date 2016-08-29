@@ -8,7 +8,7 @@
     <meta charset="utf-8">
     <base href="//localhost/projects/WouterMol/" />
     <script src="https://code.jquery.com/jquery-3.1.0.min.js"></script>
-    <script src="http://use.edgefonts.net/basic:n4:all.js"></script>
+    <script src="http://use.edgefonts.net/source-sans-pro:n4,n9,n7,i7,i4,n3,i3,n6,i6,i9,n2,i2:all.js"></script> 
     <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
     <meta name="viewport" content="width=device-width, initial-scale=1, user-scalable=0">
     <meta name="mobile-web-app-capable" content="yes" />
@@ -27,48 +27,52 @@
                 <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#id-collapse-top-nav" aria-expanded="false"> <span class="sr-only">Toggle navigation</span> <span class="icon-bar"></span> <span class="icon-bar"></span> <span class="icon-bar"></span> </button> <a href="#" class="navbar-brand">WouterMol.com</a> </div>
             <div class="collapse navbar-collapse navbar-right" id="id-collapse-top-nav">
                 <ul class="nav navbar-nav">
-                    <!-- change in production!! -->
-                    <li><a href="../WouterMol">home</a></li>
-                    <li class="active"><a href="">gallery</a></li>
-                </ul>
+                    <li ><a href="index"><span class="glyphicon glyphicon-home"></span></a></li>
+                    <li class="active"><a href="gallery">gallery</a></li>
+                    <li><a href="albums">albums</a></li>
             </div>
         </div>
     </nav>
     <section id="main">
-        <div class="jumbotron">
+        <div class="jumbotron index">
             <div class="container">
                 <h1 id="hello-message">Gallery</h1>
                 <h3 id="sub-message">portfolio showcase</h3> </div>
         </div>
-        <div class="categories container">
-            <div class="container">
-            <ul class="nav navbar-nav test">
-                <li><a href="gallery/all/all/new">all</a></li>
-                
-                <li><a href="">new to old old to new</a></li>
-            </ul>
-            </div>
+        
+        <div id="albums" class="container">
+        <div class="row">
+        <?php 
+            
+        $albums = array_filter(glob('database/categories/*'), 'is_file');
+        $album = array();
+        foreach($albums as $file) {
+            $file = pathinfo($file);
+            array_push($album,$file['filename']);
+        }
+        
+        foreach($album as $albumname){
+            
+            $jsondata = file_get_contents("database/categories/".$albumname.".json");
+            $json = json_decode($jsondata, true);            
+            echo 
+            "<div class='col-md-3'>                
+                <img src='images/". $json[0]['filename'] ."'>
+                <div class='caption'>
+                    <h2>". $albumname ."</h2>
+                </div>
+            </div>";             
+        }
+        ?>
         </div>
-        <div class="container images">
-            <div class="row">
-                <?php 
-                    echo $_GET['category'] . ' / ' . $_GET['location'] . ' / ' . $_GET['sort'];
-                ?>
-            </div>
-        </div>
+    </div>
     </section>
     
-    <div class="image-viewer">
-        
-        <img class="enlarged-image" src="">
-        <div class="carousel navbar-fixed-bottom">
-            <ul>
-            </ul>
-        </div>
-        <button class="btn btn-danger btn-close">x</button>
-    </div>
     
-    <footer></footer>
+    
+    <?php 
+        include("footer.php");
+    ?>
     
     <script src="scripts/gallery.js"></script>
 </body>
