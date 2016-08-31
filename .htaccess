@@ -6,7 +6,6 @@ RewriteRule ^([^\.]+)$ $1.php [L]
 
 
 
-
 RewriteCond %{HTTP_HOST} ^www\.woutermol\.com$
 RewriteRule ^/?$ "http\:\/\/woutermol\.com\/" [R=301,L]
 

@@ -1,11 +1,11 @@
 $(document).ready(function () {
     
-    $(".caption").css({"height": "100%","width": $("#albums img").width()});
+    $(".caption").css({"height": $("#albums img").height() ,"width": $("#albums img").width()});
     
     $(".caption").click(function () {
-        var catname = $(this).data("cat");
+        var albumname = $(this).data("album");
         var sources = [{}];
-        $.getJSON("database/categories/" + catname + ".json", function (data) {
+        $.getJSON("database/albums/" + albumname + ".json", function (data) {
             $.each(data, function (index, value) {
                 sources.push({
                     "src": "images/" + value.filename
@@ -14,13 +14,13 @@ $(document).ready(function () {
                 });
             });
             sources.splice(0, 1);
-            $(".caption[data-cat='"+catname+"']").lightGallery({
+            $(".caption[data-album='"+albumname+"']").lightGallery({
                 dynamic: true
                 , download: false
                 , dynamicEl: sources
             });
             
-            console.log($(".caption[data-catSS='"+catname+"']"));
+            console.log($(".caption[data-album='"+albumname+"']"));
         });
     });
 });
