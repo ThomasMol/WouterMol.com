@@ -28,13 +28,27 @@ body {
 
 nav {
     background-color: rgba(0, 0, 0, 0.75) !important;
+    transition-duration: 0.4s;
+}
+.navbar-inverse{
+    border: none;
+}
+
+.atTop{
+    background-color: rgba(0, 0, 0, 0.0) !important;
+    transition-duration: 0.4s;
+}
+.atTop .active a{
+    background-color: rgba(0, 0, 0, 0.1) !important;
+    transition-duration: 0.2s;
 }
 
 .active a {
-    background-color: rgba(0, 0, 0, 0.80) !important;
+    background-color: rgba(0, 0, 0, 0.8) !important;
 }
 
-nav li a {
+nav a {
+    color: white !important;
     font-size: 16px !important;
 }
 
