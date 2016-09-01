@@ -1,5 +1,7 @@
 RewriteEngine On
 
+swag g swa beter normaal doen
+
 RewriteCond %{REQUEST_FILENAME} !-d
 RewriteCond %{REQUEST_FILENAME} !-f
 RewriteRule ^([^\.]+)$ $1.php [L]
