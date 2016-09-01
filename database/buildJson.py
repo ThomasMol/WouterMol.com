@@ -24,7 +24,7 @@ def extractExif(fpath):
     try:
         date, time, timestamp = reformatDtime(exif['EXIF DateTimeOriginal'])
     except Exception, e:
-        date, time, timestamp = None
+        date, time, timestamp = None, None, None
     baseName, extension = fpath.split('/')[-1][:-4], fpath.split('.')[-1]
     return {'date':date,
             'time':time,
