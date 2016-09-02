@@ -34,10 +34,19 @@ for attrib in attributes:
             print 'error', type(contents)
     
     for value in values:
-        match = []
+        #append to existing database if it exists
+        if os.path.exists('%s/%s.json'%(attrib, value)):
+            with open('%s/%s.json'%(attrib, value)) as f:
+                match = json.load(f)
+        else:
+            match = []
+        
+        entries = [i['filename'] for i in match]
         for image in database:
             if value in image[attrib]:
-                match.append(image)
+                if image['filename'] not in entries:
+                    print 'adding %s to %s'%(image['filename'], value)
+                    match.append(image)
         
         with open('%s/%s.json'%(attrib,value),'w') as f:
             json.dump(match, f)
