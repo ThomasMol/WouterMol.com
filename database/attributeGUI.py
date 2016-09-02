@@ -3,6 +3,8 @@
 #
 import sys, os, json
 from PyQt4 import QtGui, QtCore
+
+imageFpath = '/home/wouter/Documents/website/WouterMol/images/'
  
 # Create an PyQT4 application object.
 a = QtGui.QApplication(sys.argv)
@@ -60,17 +62,19 @@ label_des.setText('description')
 #create a table
 table = QtGui.QTableWidget(w)
 table.move(10,740)
-table.resize(1280, 290)
-table.setRowCount(10)
-table.setColumnCount(6)
+table.resize(1530, 290)
+#table.setRowCount(10)
+table.setColumnCount(8)
 
-table.setHorizontalHeaderLabels(QtCore.QString("filename;title;location;categories;albums;description").split(';'))
+table.setHorizontalHeaderLabels(QtCore.QString("filename;title;location;categories;albums;description;date;time").split(';'))
 header = table.horizontalHeader()
 header.setResizeMode(QtGui.QHeaderView.ResizeToContents)
 def fillTable():
     global database
-    with open('database/database.json','r') as f:
+    with open('database.json','r') as f:
         database = json.load(f)
+    
+    table.setRowCount(len(database))
         
     for i in range(len(database)):
         table.setItem(i, 0, QtGui.QTableWidgetItem((database[i]['filename'])))
@@ -79,13 +83,15 @@ def fillTable():
         table.setItem(i, 3, QtGui.QTableWidgetItem((', '.join(database[i]['categories']))))
         table.setItem(i, 4, QtGui.QTableWidgetItem((', '.join(database[i]['albums']))))
         table.setItem(i, 5, QtGui.QTableWidgetItem((database[i]['description'])))
+        table.setItem(i, 6, QtGui.QTableWidgetItem((database[i]['date'])))
+        table.setItem(i, 7, QtGui.QTableWidgetItem((database[i]['time'])))
 
 def item_click(item):
     if item.column() == 0:
-        pic.setPixmap(QtGui.QPixmap(os.getcwd() + '/' + item.text()))
+        pic.setPixmap(QtGui.QPixmap(imageFpath + item.text()))
 
 def regenDatabase():
-    os.rename('database/database.json','database/databaseOLD.json')
+    os.rename('database.json','databaseOLD.json')
     for i in range(len(database)):
         database[i]['name'] = str(table.item(i, 1).text())
         database[i]['location'] = str(table.item(i, 2).text())
@@ -93,7 +99,7 @@ def regenDatabase():
         database[i]['albums'] = str(table.item(i, 4).text()).split(', ')
         database[i]['description'] = str(table.item(i, 5).text())
         
-    with open('database/database.json','w') as f:
+    with open('database.json','w') as f:
         json.dump(database,f)
         
 export = QtGui.QPushButton('REGENERATE DATABASE',w)
