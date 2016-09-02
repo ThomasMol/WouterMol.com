@@ -8,7 +8,7 @@ from glob import glob
 from datetime import datetime
 from time import mktime
 
-force = True #force rewrite database json
+force = False #force rewrite database json
 
 def reformatDtime(dtime):
     dt = datetime.strptime(str(dtime), '%Y:%m:%d %H:%M:%S')
@@ -24,7 +24,7 @@ def extractExif(fpath):
     try:
         date, time, timestamp = reformatDtime(exif['EXIF DateTimeOriginal'])
     except Exception, e:
-        date, time, timestamp = None, None, None
+        date, time, timestamp = '', '', ''
     baseName, extension = fpath.split('/')[-1][:-4], fpath.split('.')[-1]
     return {'date':date,
             'time':time,
@@ -52,10 +52,12 @@ if __name__ == '__main__':
             
     else:
         database = []
+    
+    entries = [i['filename'] for i in database]
 
     for image in images:
-        img_name = image.split('/')[-1][:-4]
-        if not img_name in database or force:
+        img_name = image.split('/')[-1]
+        if not img_name in entries or force:
             exif = extractExif(image)
             database.append(exif)
             print 'added',img_name,'record'
