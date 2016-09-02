@@ -56,7 +56,7 @@
             $json = json_decode($jsondata, true);            
             echo 
             "<div class='col-md-3'>                
-                <img src='images/". $json[0]['filename'] ."'>
+                <img src='images/". $json[0]['thumbnail'] ."'>
                 <div class='caption'  data-cat='". $catname ."'>
                     <h2>". $catname ."</h2>
                 </div>
