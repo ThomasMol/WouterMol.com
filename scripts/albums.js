@@ -9,7 +9,7 @@ $(document).ready(function () {
             $.each(data, function (index, value) {
                 sources.push({
                     "src": "images/" + value.filename
-                    , "thumb": "images/" + value.filename
+                    , "thumb": "images/" + value.thumbnail
                     , "subHtml": "<h4>" + value.name + "</h4><p>" + value.description + "</p>"
                 });
             });
