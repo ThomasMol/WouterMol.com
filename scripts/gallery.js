@@ -6,7 +6,7 @@ $(document).ready(function () {
         var catname = $(this).data("cat");
         var sources = [{}];
         $.getJSON("database/categories/" + catname + ".json", function (data) {
-            $.each(data, function (index, value) {
+            $.each(data.images, function (index, value) {
                 sources.push({
                     "src": "images/" + value.filename
                     , "thumb": "images/" + value.thumbnail
