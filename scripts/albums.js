@@ -6,7 +6,7 @@ $(document).ready(function () {
         var albumname = $(this).data("album");
         var sources = [{}];
         $.getJSON("database/albums/" + albumname + ".json", function (data) {
-            $.each(data, function (index, value) {
+            $.each(data.images, function (index, value) {
                 sources.push({
                     "src": "images/" + value.filename
                     , "thumb": "images/" + value.thumbnail
